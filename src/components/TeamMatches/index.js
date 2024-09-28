@@ -15,7 +15,7 @@ class TeamMatches extends Component {
   }
 
   componentDidMount() {
-    this.getTeamMatches
+    this.getTeamMatches()
   }
 
   getFormattedData = data => ({
@@ -46,8 +46,8 @@ class TeamMatches extends Component {
         this.getFormattedData(eachMatch),
       ),
     }
-
-    this.setState({teamMatchesData: formattedData, isLoading: true})
+    console.log('formattedData: ', formattedData)
+    this.setState({teamMatchesData: formattedData, isLoading: false})
   }
 
   renderRecentMatchesList = () => {
@@ -65,8 +65,9 @@ class TeamMatches extends Component {
 
   renderTeamMatches = () => {
     const {teamMatchesData} = this.state
+    console.log('teamMatchesData: ', teamMatchesData)
     const {teamBannerURL, latestMatch} = teamMatchesData
-
+    console.log('teamBannerURL: ', teamBannerURL)
     return (
       <div className="responsive-container">
         <img src={teamBannerURL} alt="team banner" className="team-banner" />

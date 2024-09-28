@@ -68,5 +68,7 @@
 .teams-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-left: 0px;
+  max-width: 1120px;
 }

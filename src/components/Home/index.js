@@ -35,11 +35,17 @@ class Home extends Component {
   renderTeamsList = () => {
     const {teamsData} = this.state
 
-    return <ul className="teams-list"></ul>
+    return (
+      <ul className="teams-list">
+        {teamsData.map(team => (
+          <TeamCard key={team.id} teamDetails={team} />
+        ))}
+      </ul>
+    )
   }
 
   renderLoader = () => (
-    <div className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
